@@ -87,5 +87,3 @@ def messagess(request):
 def customersdetail(request):
     return render(request,'admin/customers.html')
 
-def logout(request):
-    re
