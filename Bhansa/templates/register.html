@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="/" class="logo"> Bhansa </a>
+
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="kitchen">Kitchens</a>
+        <a href="about">About</a>
+        <a href="contact">Contact</a>
+        <a href="login">Login</a>
+    </nav>
+
+
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div id="search-btn" class="fas fa-search"></div>
+
+    </div>
+
+    <form action="" class="search-form">
+        <input type="search" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+</header>
+
+<!-- header section ends -->
+
+
+<section class="heading">
+    <h1>Account</h1>
+    <p> <a href="">home</a> >> Create Account </p>
+</section>
+
+<!-- header section -->
+
+<!-- login form section starts -->
+
+<section class="register-form">
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <h3>register now</h3>
+        <div class="inputBox">
+            <span class="fas fa-user"></span>
+            <input type="text" name="username" placeholder="enter your username" id="">
+        </div>
+        <div class="inputBox">
+            <span class="fas fa-envelope"></span>
+            <input type="email" name="email" placeholder="enter your email" id="">
+        </div>
+
+        <div class="inputBox">
+            <span class="fas fa-envelope"></span>
+            <input type="number" name="number" placeholder="enter your phone number" id="">
+        </div>
+
+        <div class="inputBox">
+            <span class="fas fa-lock"></span>
+            <input type="password" name="password" placeholder="enter your password" id="">
+        </div>
+        <div class="inputBox">
+            <span class="fas fa-lock"></span>
+            <input type="password" name="cpassword" placeholder="confirm your password" id="">
+        </div>
+        <input type="submit" value="sign up" class="btn">
+        <a href="login" class="btn">already have an account</a>
+    </form>
+
+</section>
+
+<!-- login form section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="home.html"> <i class="fas fa-arrow-right"></i> home</a>
+            <a href="kitchen.html"> <i class="fas fa-arrow-right"></i> Kitchen</a>
+            <a href="about.html"> <i class="fas fa-arrow-right"></i> About Us</a>
+            <a href="contact.html"> <i class="fas fa-arrow-right"></i> Contact</a>
+        </div>
+
+        <div class="box">
+            <h3>Our Locations</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> Dillibazar</a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> Pokhara</a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> Butwal </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> Jhapa</a>
+        </div>
+
+        <div class="box">
+            <h3>Contact</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> +977 9880327811</a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> aayushnepal@gmail.com</a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> info@bhansa.com.np </a>
+        </div>
+
+        
+
+    </div>
+
+</section>
+
+<section class="credit">Created by Aayush | ARights Reserved!</section>
+
+<!-- footer section ends -->
+
+
+<!-- custom css file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
