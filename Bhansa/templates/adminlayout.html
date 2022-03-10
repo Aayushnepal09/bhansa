@@ -1,0 +1,60 @@
+{% load static %}
+    {% block content %}
+    <div class="sidebar">
+        <div class="logo-details">
+  
+          <div class="logo_name">bhansa</div>
+          <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="adminn">
+              <i class="bx bx-grid-alt"></i>
+              <span class="links_name">Add Products</span>
+            </a>
+            <span class="tooltip">Add Product</span>
+          </li>
+          <li>
+            <a href="product">
+              <i class="bx bx-grid-alt"></i>
+              <span class="links_name">bhansas</span>
+            </a>
+            <span class="tooltip">product</span>
+          </li>
+          <li>
+            <a href="customersdetail">
+              <i class="bx bx-user"></i>
+              <span class="links_name">Customers</span>
+            </a>
+            <span class="tooltip">Customers</span>
+          </li>
+          <li>
+            <a href="messagess">
+              <i class="bx bx-chat"></i>
+              <span class="links_name">Messages</span>
+            </a>
+            <span class="tooltip">Messages</span>
+          </li>
+       
+      
+          <li>
+            <a href="bookingdetails">
+              <i class="bx bx-cart"></i>
+              <span class="links_name">Bookings</span>
+            </a>
+            <span class="tooltip">Bookings</span>
+          </li>
+  
+          <li class="profile">
+            <div class="profile-details">
+              <div class="name_job">
+                <div class="name">Admin</div>
+                <div class="job">Logout</div>
+              </div>
+            </div>
+            <i class="bx bx-log-out" id="log_out"></i>
+          </li>
+        </ul>
+      </div>
+    {% endblock %}
+    

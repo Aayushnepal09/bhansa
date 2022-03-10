@@ -14,75 +14,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <div class="sidebar">
-      <div class="logo-details">
+    {% include 'adminlayout.html'%}
+    {% block content %}{% endblock %}
 
-        <div class="logo_name">bhansa</div>
-        <i class="bx bx-menu" id="btn"></i>
-      </div>
-      <ul class="nav-list">
-        <li>
-          <a href="adminn" class="active">
-            <i class="bx bx-grid-alt"></i>
-            <span class="links_name">Add Products</span>
-          </a>
-          <span class="tooltip">Add Product</span>
-        </li>
-        <li>
-          <a href="product">
-            <i class="bx bx-grid-alt"></i>
-            <span class="links_name">bhansas</span>
-          </a>
-          <span class="tooltip">product</span>
-        </li>
-        <li>
-          <a href="customersdetail">
-            <i class="bx bx-user"></i>
-            <span class="links_name">Customers</span>
-          </a>
-          <span class="tooltip">Customers</span>
-        </li>
-        <li>
-          <a href="messagess">
-            <i class="bx bx-chat"></i>
-            <span class="links_name">Messages</span>
-          </a>
-          <span class="tooltip">Messages</span>
-        </li>
-        <li>
-          <a href="orders">
-            <i class="bx bx-cart-alt"></i>
-            <span class="links_name">Order</span>
-          </a>
-          <span class="tooltip">Order</span>
-        </li>
-        <li>
-          <a href="catering">
-            <i class="bx bx-cart"></i>
-            <span class="links_name">Catering Order</span>
-          </a>
-          <span class="tooltip">Catering Order</span>
-        </li>
-
-        <li class="profile">
-          <div class="profile-details">
-            <div class="name_job">
-              <div class="name">Admin</div>
-              <div class="job">Logout</div>
-            </div>
-          </div>
-          <i class="bx bx-log-out" id="log_out"></i>
-        </li>
-      </ul>
-    </div>
     <section class="home-section">
+
       <div class="text">Add product</div>
       <div class="home-content">
         <div class="overview-boxes">
           <div class="box">
             <div class="right-side">
               <div class="box-topic">Total Products</div>
-              <div class="number">40,876</div>
+              <div class="number">{{pcount}}</div>
             </div>
           </div>
         </div>
@@ -92,53 +35,25 @@
             <div class="title">Bhansa</div>
             <div class="sales-details">
               <form
-                action=""
+                action="/adminn"
                 method="post"
                 class="add-product-form"
                 enctype="multipart/form-data"
               >
+              {% csrf_token %}
                 <h3>Add product</h3>
                 <span>bhansa Name</span>
                 <input
                   type="text"
-                  name="p_name"
+                  name="product_name"
                   placeholder="enter the product name"
                   class="box"
                   required
                 />
-                <span>bhansa Type</span>
-                <input
-                  class="list"
-                  list="Day of arrival"
-                  placeholder="Enter the type of bhansa"
-                />
-                <datalist id="Day of arrival">
-                  <option value="Chowmein"></option>
-                  <option value="Momo"></option>
-                  <option value="Dosa"></option>
-                  <option value="Burger"></option>
-                  <option value="Pizza"></option>
-                  <option value="Tea"></option>
-                  <option value="Chaat"></option>
-                  <option value="Sandwich"></option>
-                  <option value="S.Snacks"></option>
-                  <option value="Laddu"></option>
-                  <option value="Barfi"></option>
-                  <option value="Peda"></option>
-                  <option value="S.Sweets"></option>
-                  <option value="Samosa"></option>
-                  <option value="Bhujiya"></option>
-                  <option value="Chips"></option>
-                  <option value="S.Namkeen"></option>
-                  <option value="Cakes"></option>
-                  <option value="Bread"></option>
-                  <option value="Cookies"></option>
-                  <option value="Donuts"></option>
-                </datalist>
                 <span>Price</span>
                 <input
                   type="number"
-                  name="p_price"
+                  name="product_price"
                   min="0"
                   placeholder="Enter the product price"
                   class="box"
@@ -147,17 +62,17 @@
                 <span>Description</span>
                 <input
                   type="text"
-                  name="description"
+                  name="product_desc"
                   min="0"
                   placeholder="Enter the product description"
                   class="box"
                   required
                 />
-                <span>Name</span>
+                <span>Image</span>
                 <input
                   type="file"
-                  name="p_image"
-                  accept="image/png, image/jpg, image/jpeg"
+                  name="product_image"
+                  value="product.product_image"
                   class="box3"
                   style="
                     display: inline-block;

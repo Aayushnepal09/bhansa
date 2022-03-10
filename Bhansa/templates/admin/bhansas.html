@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bhansa Admin Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/customer.css' %}" />
+
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    {% include 'adminlayout.html'%}
+    {% block content %}{% endblock %}
+
+    <section class="home-section">
+      <div class="text">Our products</div>
+      <div class="home-content">
+        <div class="overview-boxes">
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Products</div>
+              <div class="number">{{pcount}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="sales-boxes">
+          <div class="recent-sales box">
+            <div class="title">Bhansa's bhansa List</div>
+            <div class="sales-details">
+              <table>
+                <thead>
+                jbj
+                  <th>product image</th>
+                  <th>product name</th>
+                  <th>product price</th>
+                  <th>product description</th>
+
+                  <th>action</th>
+                </thead>
+
+                <tbody>
+                  {% for product in products %}
+                  <tr>
+              
+                    <td><img width="200" src="{% static 'assets/' %}{{product.product_image}}"></td>
+                    <td>{{product.product_name}}</td>
+                    <td>{{product.product_price}}</td>
+                    <td>{{product.product_desc}}</td>
+                    <td>
+                      <a
+                        href="delete/{{product.product_id}}"
+                        class="delete-btn"
+                        onclick="return confirm('are your sure you want to delete this?');"
+                      >
+                        <i class="fas fa-trash"></i> delete
+                      </a>
+                      <a href="edit/{{product.product_id}}" class="option-btn">
+                        <i class="fas fa-edit"></i> update
+                      </a>
+                    </td>
+                  </tr>
+                 {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

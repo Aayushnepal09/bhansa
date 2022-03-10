@@ -17,30 +17,8 @@
 <body>
     
 <!-- header section starts  -->
-<header class="header">
-
-    <a href="/" class="logo"> Bhansa </a>
-
-    <nav class="navbar">
-        <a href="/">Home</a>
-        <a href="kitchen">Kitchens</a>
-        <a href="about">About</a>
-        <a href="contact">Contact</a>
-        <a href="login">Login</a>
-    </nav>
-
-
-    <div class="icons">
-        <div id="menu-btn" class="fas fa-bars"></div>
-        <div id="search-btn" class="fas fa-search"></div>
-    </div>
-
-    <form action="" class="search-form">
-        <input type="search" placeholder="search here..." id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-    </form>
-</header>
-
+{% include 'layout.html'%}
+{% block header %}{% endblock %}
 <!-- header section ends -->
 
 <div class="heading">
@@ -56,90 +34,22 @@
     <h1 class="title"> <span>our design</span></h1>
 
     <div class="box-container">
-
+        {% for product in product %} 
         <div class="box">
             <div class="image">
-                <img src="{% static 'img/kitchens/island-modular-kitchen-design-1024x1024.jpg' %}" alt="">
+                <img src="{% static 'assets/' %}{{product.product_image}}" alt="">
             </div>
             <div class="content">
-                <h3>Island Modular Kitchen Design</h3>
-                <p>With large kitchen spaces becoming the norm in urban households, island modular kitchen designs are all the hype. Spread out over the entire kitchen area; an island-shaped kitchen accommodates all functionalities in a sophisticated manner. It allows for a variety of comfort options to the host and guests alike. Kitchen layouts with island give more rooms for kids to play around, do their homework, and ample space makes the kitchen a multifunctional area. It also provides additional storage and is more brightly ventilated.</p>
-                <a href="#" class="btn">Book now</a>
+                <h3>{{product.product_name}}</h3>
+                <p>{{product.product_desc}}</p>
+                <a href="/booking/{{product.product_id}}" class="btn">Book now</a>
                 <div class="icons">
-                    <a href="#"> <i class="fas fa-money-bill">  Price Nrs.</i>5000</a>
+                    <a href="#"> <i class="fas fa-money-bill">  Price Nrs.</i>{{product.product_price}}</a>
                 </div>
             </div>
         </div>
+        {% endfor %}
         
-        <div class="box">
-            <div class="image">
-                <img src="{% static 'img/kitchens/l-shaped-modular-kitchen-1024x1024.jpg' %}" alt="">
-            </div>
-            <div class="content">
-                <h3>L Shaped Modular Kitchen Design Layout</h3>
-                <p>This shape works best for small to medium kitchen spaces. To design an L-Shape modular kitchen, one needs thoughtful planning to keep it clutter-free and organized. Creativity amplifies in an L-Shaped modular kitchen. The L-Shaped kitchen is ergonomically appropriate and facilitates a sensible work triangle for preparation, cooking, and cleaning. This type of kitchen design can be matched to any decor as this layout type requires an excellent floor plan. For an L-shaped design to work, the kitchen must be built at the corner where two walls form a perpendicular angle. Also, one part of the wall must be twice the length of other.</p>
-                <a href="#" class="btn">Book now</a>
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-money-bill">  Price Nrs.</i>5000</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="{% static 'img/kitchens/u-shaped-modular-kitchen-design-1024x1024.jpg' %}" alt="">
-            </div>
-            <div class="content">
-                <h3>U Shaped Modular Kitchen Design</h3>
-                <p>A U-Shaped modular design features three walls and are lined with cabinets and appliances. This type of kitchen is an efficient design that frees up floor space. It is the most practical kitchen layout and provides a lot of space for storage and appliances compared to a U-shaped modular kitchen. The concept of the ‘Golden Triangle’ is a natural fit with a U-shaped modular kitchen as your fridge, sink, and stoves are placed within an arm’s reach. This is a practical use of kitchen space, something which  L-shaped kitchens and other galley kitchens might find harder to achieve. The biggest advantage of a U-shaped modular kitchen is the safety factor as it doesn’t allow traffic to disrupt your workflow.</p>
-                <a href="#" class="btn">Book now</a>
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-money-bill">  Price Nrs.</i>5000</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="{% static 'img/kitchens/open-modular-kitchen-design-1024x1024.jpg' %}" alt="">
-            </div>
-            <div class="content">
-                <h3>Open Modular Kitchen Design</h3>
-                <p>An open modular kitchen is popular among most Indian homes as it blends well with the rest of the house. An open modular kitchen adds volume, especially in modest-sized homes. One beneficial factor about open modular kitchens is you don’t feel isolated from the action in the living room. This kitchen shape allows you to converse with guests as you cook, take part in family activities such as watching television. The open concept kitchen is ideal for small homes as this design makes even the smallest spaces feel spacious.</p>
-                <a href="#" class="btn">Book now</a>
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-money-bill">  Price Nrs.</i>5000</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="box">
-            <div class="image">
-                <img src="{% static 'img/kitchens/u-shaped-modular-kitchen-design-1024x1024.jpg' %}" alt="">
-            </div>
-            <div class="content">
-                <h3>U Shaped Modular Kitchen Design</h3>
-                <p>A U-Shaped modular design features three walls and are lined with cabinets and appliances. This type of kitchen is an efficient design that frees up floor space. It is the most practical kitchen layout and provides a lot of space for storage and appliances compared to a U-shaped modular kitchen. The concept of the ‘Golden Triangle’ is a natural fit with a U-shaped modular kitchen as your fridge, sink, and stoves are placed within an arm’s reach. This is a practical use of kitchen space, something which  L-shaped kitchens and other galley kitchens might find harder to achieve. The biggest advantage of a U-shaped modular kitchen is the safety factor as it doesn’t allow traffic to disrupt your workflow.</p>
-                <a href="#" class="btn">Book now</a>
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-money-bill">  Price Nrs.</i>5000</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="{% static 'img/kitchens/gallery-modular-kitchen-design-1024x1024.jpg' %}" alt="">
-            </div>
-            <div class="content">
-                <h3>Galley Modular Kitchen Design</h3>
-                <p>A galley modular kitchen can be defined by two narrow rows of cabinets facing each other with a narrow walkway in between. The galley layout works well with all kitchen styles, as it enhances safety and efficiency while cooking. This type of kitchen shape can fit several cabinets and house doors or walkways at either end of the run. Tall cabinets run along the wall to store all major appliances. Keep base cabinets in a heavier, darker material, and the upper cabinet in a lighter colour to connect it more towards the ceiling. This will also help reduce the feeling that you are in a hallway. Try concealing the fridge and dishwasher behind cabinet panels to give the space a tidy look.</p>
-                <a href="#" class="btn">Book now</a>
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-money-bill">  Price Nrs.</i>5000</a>
-                </div>
-            </div>
-        </div>
     </div>
 
 </section>

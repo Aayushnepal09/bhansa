@@ -11,10 +11,16 @@ urlpatterns=[
     path('kitchen',views.kitchen,name='kitchen'),
     path('adminn',views.admin,name='adminn'),
     path('product',views.product,name='product'),
-    path('catering',views.catering,name='customer'),
+    path('bookingdetails',views.bookingdetails,name='booking'),
     path('customersdetail',views.customersdetail),
-    path('orders',views.orders),
     path('messagess',views.messagess),
-    path('logout',LogoutView.as_view(next_page=settings.LOGOUT_REDIRECT_URL),name="logout")
+    path('logout',LogoutView.as_view(next_page=settings.LOGOUT_REDIRECT_URL),name="logout"),
+    path('booking/<int:p_id>',views.booking),
+    path('edit/<int:p_id>',views.edit),
+    path('update/<int:p_id>',views.update),
+    path('delete/<int:p_id>',views.delete),
+    path('deletebooking/<int:p_id>',views.deletebooking),
+    path('deleteuser/<int:p_id>',views.deleteuser)
+
 
 ]
